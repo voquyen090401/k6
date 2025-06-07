@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "prepare-reports": "node createReportsFolder.js",
+    "smoke": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=smoke src/main.js --out json=reports/smoke-result.json",
+    "load": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=load src/main.js --out json=reports/load-result.json",
+    "spike": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=spike src/main.js --out json=reports/spike-result.json",
+    "stress": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=stress src/main.js --out json=reports/stress-result.json"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "k6": "^0.0.0"
+  }
+}

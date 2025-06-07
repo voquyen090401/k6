@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  k6:
+    image: loadimpact/k6:latest
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      - TEST_TYPE=smoke
+    command: run src/main.js
