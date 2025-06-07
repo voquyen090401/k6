@@ -3,8 +3,8 @@ export default {
   modules: ['auth', 'product'], // key allModules
   options: {
     smoke: {
-      vus: 2,
-      duration: '10s',
+      vus: 10,
+      duration: '30s',
     },
     load: {
       vus: 20,

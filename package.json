@@ -3,10 +3,10 @@
   "scripts": {
     "prepare-reports": "node src/utils/initReport.js",
     "build-k6-dashboard": "xk6 build --with github.com/grafana/xk6-dashboard@latest",
-    "smoke": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=smoke src/main.js --out json=reports/smoke.json --out dashboard=reports/smoke",
-    "load": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=load src/main.js --out json=reports/load.json --out dashboard=reports/load",
-    "spike": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=spike src/main.js --out json=reports/spike.json --out dashboard=reports/spike",
-    "stress": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=stress src/main.js --out json=reports/stress.json --out dashboard=reports/stress"
+    "smoke": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=smoke src/main.js --out json=reports/smoke.json --out dashboard=reports/smoke.json",
+    "load": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=load src/main.js --out json=reports/load.json --out dashboard=reports/load.json",
+    "spike": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=spike src/main.js --out json=reports/spike.json --out dashboard=reports/spike.json",
+    "stress": "cross-env npm run prepare-reports && start http://localhost:5665 && k6.exe run --env TEST_TYPE=stress src/main.js --out json=reports/stress.json --out dashboard=reports/stress.json"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
