@@ -1,4 +1,5 @@
 import { allModules } from './index.js';
+import config from "../config/testModes.js"
 
 export function getModulesToRun(config) {
   let modulesToRun = Object.keys(allModules);
@@ -17,6 +18,6 @@ export function getModulesToRun(config) {
 export function runModules(modulesToRun) {
   for (const moduleName of modulesToRun) {
     console.log(`➡️ Chạy module: ${moduleName}`);
-    allModules[moduleName]();
+    allModules[moduleName](config.useGroup);
   }
 }

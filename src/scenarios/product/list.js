@@ -4,7 +4,7 @@ import { checkBasic } from '../../utils/check.js';
 
 export function listProduct(MODULE) {
   group(MODULE, () => {
-    const res = http.get('https://example.com/api/products');
+    const res = http.get('https://66cc49c7a4dd3c8a71b70c72.mockapi.io/api/he/users');
     checkBasic(MODULE, res);
   });
 }

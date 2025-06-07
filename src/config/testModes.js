@@ -1,6 +1,6 @@
 export default {
-  useGroup: true, // true = dùng group, false = dùng module
-  modules: ['auth', 'order'],
+  useGroup: false, // true = dùng group, false = dùng module
+  modules: ['auth', 'product'], // key allModules
   options: {
     smoke: {
       vus: 2,
