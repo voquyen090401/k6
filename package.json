@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "prepare-reports": "node createReportsFolder.js",
+    "prepare-reports": "node src/utils/initReport.js",
     "smoke": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=smoke src/main.js --out json=reports/smoke-result.json",
     "load": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=load src/main.js --out json=reports/load-result.json",
     "spike": "npm run prepare-reports && cross-env k6 run --env TEST_TYPE=spike src/main.js --out json=reports/spike-result.json",
