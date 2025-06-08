@@ -5,9 +5,12 @@
 
 ## 🚀 Cách chạy
 B1. Khởi tạo biểu đồ thống kê
-- **Khởi tạo**  
+- **Khởi tạo biểu đồ**  
   ```bash
   ./run.sh
+- **Khởi tạo thông tin người dùng thật**  
+  ```bash
+  npm run init
 
 B2. Chạy các kiểu test khác nhau bằng npm scripts: http://localhost:5665
 
