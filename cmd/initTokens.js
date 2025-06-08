@@ -39,9 +39,9 @@ async function main() {
             tokens.push(token);
             console.log(`Khởi tạo token thứ ${i + 1} thành công!`);
         } else {
+             tokens.push("");
             console.log(`Khởi tạo token thứ ${i + 1} thất bại!`);
         }
-        tokens.push("token");
     }
 
     // Lưu tất cả token vào file
