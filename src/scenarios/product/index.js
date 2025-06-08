@@ -14,9 +14,9 @@ const scenarios = [
   { fn: deleteProduct, label: 'DELETE' },
 ];
 
-export function runScenarios(useGroup) {
+export function runScenarios(useGroup, metric) {
   scenarios.forEach(({ fn, label }) => {
     const moduleName = useGroup ? GROUP : `${GROUP} - ${label}`;
-    fn(moduleName);
+    fn(moduleName, metric);
   });
 }

@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { group } from 'k6';
 import { checkBasic } from '../../utils/check.js';
 
-export function register(MODULE) {
+export function register(MODULE, metric) {
   group(MODULE, () => {
     const url = 'https://example.com/api/auth/register';
     const payload = JSON.stringify({
@@ -15,6 +15,6 @@ export function register(MODULE) {
       headers: { 'Content-Type': 'application/json' }
     });
 
-    checkBasic(MODULE, res);
+    checkBasic(res, metric);
   });
 }

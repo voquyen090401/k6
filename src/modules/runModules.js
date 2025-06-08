@@ -15,9 +15,8 @@ export function getModulesToRun(config) {
   return modulesToRun;
 }
 
-export function runModules(modulesToRun) {
+export function runModules(modulesToRun, metrics) {
   for (const moduleName of modulesToRun) {
-    console.log(`➡️ Chạy module: ${moduleName}`);
-    allModules[moduleName](config.useGroup);
+    const response = allModules[moduleName](config.useGroup, metrics[moduleName]);
   }
 }

@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { group } from 'k6';
 import { checkBasic } from '../../utils/check.js';
 
-export function createProduct(MODULE) {
+export function createProduct(MODULE, metric) {
   group(MODULE, () => {
     const payload = JSON.stringify({
       "createdAt": "2025-06-07T06:51:28.201Z",
@@ -14,6 +14,6 @@ export function createProduct(MODULE) {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    checkBasic(MODULE, res);
+    checkBasic(res, metric);
   });
 }
