@@ -10,8 +10,10 @@ B1. Khởi tạo biểu đồ thống kê
   ./run.sh
 - **Khởi tạo thông tin người dùng thật**  
   ```bash
-  npm run init
-
+  npm run init-users
+- **Khởi tạo token**  
+  ```bash
+  npm run init-tokens
 B2. Chạy các kiểu test khác nhau bằng npm scripts: http://localhost:5665
 
 - **Smoke test**  

@@ -11,7 +11,7 @@ export function createProduct(MODULE, metric) {
     });
 
     const res = http.post('https://66cc49c7a4dd3c8a71b70c72.mockapi.io/api/he/users', payload, {
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', },
     });
 
     checkBasic(res, metric);
