@@ -1,6 +1,7 @@
 import config from './config/testModes.js';
 import { getModulesToRun, runModules } from './modules/runModules.js';
 import { initMetrics } from './utils/check.js';
+import { allMetrics } from './modules/index.js';
 
 const testType = __ENV.TEST_TYPE || 'smoke';
 
@@ -23,8 +24,8 @@ const modulesToRun = getModulesToRun(config);
 const metrics = {};
 
 // Khởi tạo metrics cho từng module
-modulesToRun.forEach(module => {
-    metrics[module] = initMetrics(module);
+allMetrics.forEach(metric => {
+    metrics[metric] = initMetrics(metric);
 });
 
 // Hàm chính

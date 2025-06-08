@@ -4,19 +4,19 @@ import { detailProduct } from './detail.js';
 import { listProduct } from './list.js';
 import { updateProduct } from './update.js';
 
-const GROUP = 'PRODUCT';
+const GROUP = 'product';
 
-const scenarios = [
-  { fn: listProduct, label: 'LIST' },
-  { fn: detailProduct, label: 'DETAIL' },
-  { fn: createProduct, label: 'CREATE' },
-  { fn: updateProduct, label: 'UPDATE' },
-  { fn: deleteProduct, label: 'DELETE' },
+export const scenarios = [
+  { fn: listProduct, group: GROUP, label: 'list' },
+  { fn: detailProduct, group: GROUP, label: 'update' },
+  { fn: createProduct, group: GROUP, label: 'create' },
+  { fn: updateProduct, group: GROUP, label: 'update' },
+  { fn: deleteProduct, group: GROUP, label: 'delete' },
 ];
 
-export function runScenarios(useGroup, metric) {
+export function runScenarios(useGroup, metrics) {
   scenarios.forEach(({ fn, label }) => {
-    const moduleName = useGroup ? GROUP : `${GROUP} - ${label}`;
-    fn(moduleName, metric);
+    const moduleName = useGroup ? GROUP : `${GROUP}_${label}`;
+    fn(moduleName, metrics[moduleName]);
   });
 }

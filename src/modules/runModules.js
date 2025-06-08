@@ -17,6 +17,6 @@ export function getModulesToRun(config) {
 
 export function runModules(modulesToRun, metrics) {
   for (const moduleName of modulesToRun) {
-    const response = allModules[moduleName](config.useGroup, metrics[moduleName]);
+    allModules[moduleName](config.useGroup, metrics);
   }
 }

@@ -1,16 +1,16 @@
 import { login } from './login.js';
 import { register } from './register.js';
 
-const GROUP = 'AUTH';
+const GROUP = 'auth';
 
-const scenarios = [
-  { fn: login, label: 'LOGIN' },
-  { fn: register, label: 'REGISTER' },
+export const scenarios = [
+  { fn: login, group: GROUP, label: 'login' },
+  { fn: register, group: GROUP, label: 'register' },
 ];
 
-export function runScenarios(useGroup, metric) {
+export function runScenarios(useGroup, metrics) {
   scenarios.forEach(({ fn, label }) => {
-    const moduleName = useGroup ? GROUP : `${GROUP} - ${label}`;
-    fn(moduleName, metric);
+    const moduleName = useGroup ? GROUP : `${GROUP}_${label}`;
+    fn(moduleName, metrics[moduleName]);
   });
 }
